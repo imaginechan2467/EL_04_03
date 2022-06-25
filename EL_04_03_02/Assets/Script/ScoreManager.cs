@@ -2,8 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public static class ScoreManager
 {
+
+    public static bool bIsClear = false;
+    public static void SetIsClear(bool b) { bIsClear = b; }
+    public static bool GetIsClear() { return bIsClear; }
+    
+
+
     public enum ScoreName
     {
         SN_Time,
@@ -15,7 +23,7 @@ public static class ScoreManager
     // ƒŠƒZƒbƒg
     public static void Reset()
     {
-        for (int i = 0; i < score.Length; i++)
+        for (int i = 0; i < (int)ScoreName.SN_MAX; i++)
         {
             score[i] = 0;
         }
