@@ -25,7 +25,6 @@ public class SC_NoroiTree : MonoBehaviour
         if (isFirst) return;
 
         isFirst = true;
-        //child = picList[Random.Range(0, picList.Length)];
         child.GetComponent<SpriteRenderer>().sprite = picList[Random.Range(0, picList.Length)];
 
         StartCoroutine(WaitForCreate());
