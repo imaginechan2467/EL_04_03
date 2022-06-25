@@ -2680,27 +2680,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 429508, guid: 9c74caa742791864f9c678287121e6c9, type: 3}
   m_PrefabInstance: {fileID: 308980691}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &315951502 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8501800921304420708, guid: ce550b8133483c6409cae3b4cca94511, type: 3}
-  m_PrefabInstance: {fileID: 5496307764963814814}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &315951507
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 315951502}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!1001 &320052200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22328,14 +22307,6 @@ PrefabInstance:
     - target: {fileID: 5496307766384245771, guid: ce550b8133483c6409cae3b4cca94511, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8501800921304420708, guid: ce550b8133483c6409cae3b4cca94511, type: 3}
-      propertyPath: m_TagString
-      value: Gate
-      objectReference: {fileID: 0}
-    - target: {fileID: 9137827415119296435, guid: ce550b8133483c6409cae3b4cca94511, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce550b8133483c6409cae3b4cca94511, type: 3}
