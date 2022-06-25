@@ -122,8 +122,10 @@ public class FPSController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Gate"))
         {
-            ScoreManager.Add(2,(int)ScoreManager.ScoreName.SN_ClearType);
+            if (ScoreManager.Get((int)ScoreManager.ScoreName.SN_ClearType) == 1) { 
+                ScoreManager.Add(2, (int)ScoreManager.ScoreName.SN_ClearType);
             SceneManager.LoadScene("Result");
+        }
         }
     }
     private void OnTriggerExit(Collider other)
