@@ -9,6 +9,7 @@ public class SC_NoroiTree : MonoBehaviour
     [SerializeField] GameObject effectRef = null;
     GameObject child = null;
     bool isFirst = false;
+    float time = 0.0f;
 
     private void Awake()
     {
@@ -18,6 +19,15 @@ public class SC_NoroiTree : MonoBehaviour
     private void Start()
     {
         child = this.transform.Find("pic").gameObject;
+    }
+
+    private void Update()
+    {
+        time += Time.deltaTime;
+        if(time >= 10.0f)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     void SetEffect()
@@ -33,7 +43,7 @@ public class SC_NoroiTree : MonoBehaviour
 
     IEnumerator WaitForCreate()
     {
-        for(int i = 0;i < 3;i++)
+        for(int i = 0;i < Random.Range(10,15);i++)
         {
             GameObject obj = Instantiate(effectRef);
             obj.transform.position = child.transform.position;

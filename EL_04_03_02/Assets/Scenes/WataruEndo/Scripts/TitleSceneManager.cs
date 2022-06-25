@@ -67,6 +67,7 @@ public class TitleSceneManager : MonoBehaviour
 
     private void SceneChange()
     {
-        SceneManager.LoadScene("GameScene");  //シーンを移動
+        //SceneManager.LoadScene("Game");  //シーンを移動
+        SceneManager.LoadScene(1);
     }
 }

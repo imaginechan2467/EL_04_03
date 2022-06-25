@@ -14,11 +14,17 @@ public class FPSController : MonoBehaviour
 
     bool cursorLock = true;
     bool enableTouch = false;
+    bool enableGoal = false;
 
     Rigidbody rb;
 
     //変数の宣言(角度の制限用)
     float minX = -90f, maxX = 90f;
+
+    private void Awake()
+    {
+
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -91,6 +97,7 @@ public class FPSController : MonoBehaviour
             if(enableTouch)
             {
                 SC_EventBus.Instance.NotifyOnTouchWara();
+                enableGoal = true;//わらを触ったフラグ
             }
         }
     }
@@ -122,10 +129,14 @@ public class FPSController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Gate"))
         {
-            if (ScoreManager.Get((int)ScoreManager.ScoreName.SN_ClearType) == 1) { 
-                ScoreManager.Add(2, (int)ScoreManager.ScoreName.SN_ClearType);
-            SceneManager.LoadScene("Result");
-        }
+            if (ScoreManager.Get((int)ScoreManager.ScoreName.SN_ClearType) == 1)
+            { 
+                if(enableGoal)
+                {
+                    ScoreManager.Add(2, (int)ScoreManager.ScoreName.SN_ClearType);//1クリア　2
+                    SceneManager.LoadScene("Result");
+                }
+            }
         }
     }
     private void OnTriggerExit(Collider other)
