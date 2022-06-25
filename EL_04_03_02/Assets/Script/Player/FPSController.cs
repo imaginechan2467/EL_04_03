@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FPSController : MonoBehaviour
 {
@@ -113,23 +114,28 @@ public class FPSController : MonoBehaviour
         return q;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.tag == "Tree")
+        if (other.gameObject.tag == "Tree")
         {
             enableTouch = true;
         }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if(collision.gameObject.tag == "Tree")
+        if (other.gameObject.CompareTag("Gate"))
         {
-            if(enableTouch)
+            SceneManager.LoadScene("Result");
+        }
+
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Tree")
+        {
+            if (enableTouch)
             {
                 enableTouch = false;
             }
         }
     }
+
 
 }
