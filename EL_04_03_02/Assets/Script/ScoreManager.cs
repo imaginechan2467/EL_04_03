@@ -14,6 +14,20 @@ public static class ScoreManager
         SN_MAX
     }
 
+    private static float time;
+
+    public static void Start()
+    {
+        time = 0.0f;
+        Reset();
+    }
+
+    public static void Update()
+    {
+        time += Time.deltaTime;
+        score[(int)ScoreName.SN_Time] = (int)time;
+    }
+
     static int[] score = new int[(int)ScoreName.SN_MAX];
     // ƒŠƒZƒbƒg
     public static void Reset()
