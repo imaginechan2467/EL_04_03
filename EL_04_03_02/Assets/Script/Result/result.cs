@@ -25,8 +25,8 @@ public class result : MonoBehaviour
         {
             isClear.text = "GameOver";
         }
-        time.text = ScoreManager.Get((int)ScoreManager.ScoreName.SN_Time).ToString();
-        score.text = ScoreManager.Get((int)ScoreManager.ScoreName.SN_Score).ToString();
+        time.text = "Time : " + ScoreManager.Get((int)ScoreManager.ScoreName.SN_Time).ToString();
+        score.text = "Score : " + ScoreManager.Get((int)ScoreManager.ScoreName.SN_Score).ToString();
     }
 
     // Update is called once per frame
