@@ -11,15 +11,12 @@ public class result : MonoBehaviour
     [SerializeField] private Text score;
     [SerializeField] private Text isClear;
 
-
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        ScoreManager.Reset();
         if (ScoreManager.Get((int)ScoreManager.ScoreName.SN_ClearType) == 2)
         {
             isClear.text = "GameClear";
+            CalcScore();
         }
         if(ScoreManager.Get((int)ScoreManager.ScoreName.SN_ClearType) == -1)
         {
@@ -29,9 +26,28 @@ public class result : MonoBehaviour
         score.text = "Score : " + ScoreManager.Get((int)ScoreManager.ScoreName.SN_Score).ToString();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void CalcScore()
     {
-        
+        int time = ScoreManager.Get((int)ScoreManager.ScoreName.SN_Time);
+        if(time == 120)
+        {
+            ScoreManager.Add(500, (int)ScoreManager.ScoreName.SN_Score);
+        }
+        else if(time == 240)
+        {
+            ScoreManager.Add(250, (int)ScoreManager.ScoreName.SN_Score);
+        }
+        else if (time == 360)
+        {
+            ScoreManager.Add(100, (int)ScoreManager.ScoreName.SN_Score);
+        }
+        else if (time == 480)
+        {
+            ScoreManager.Add(50, (int)ScoreManager.ScoreName.SN_Score);
+        }
+        else if (time == 600)
+        {
+            ScoreManager.Add(1, (int)ScoreManager.ScoreName.SN_Score);
+        }
     }
 }
