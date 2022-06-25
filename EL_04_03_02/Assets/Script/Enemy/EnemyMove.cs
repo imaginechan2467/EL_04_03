@@ -28,6 +28,7 @@ public class EnemyMove : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            ScoreManager.Add(-1, (int)ScoreManager.ScoreName.SN_ClearType);//1ƒNƒŠƒA@2
             SceneManager.LoadScene("Result");
         }
     }
