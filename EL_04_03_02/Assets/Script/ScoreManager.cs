@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class ScoreManager
 {
-    enum ScoreName
+    public enum ScoreName
     {
         SN_Time,
         SN_Score,
