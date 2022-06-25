@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public static class ScoreManager
 {
+
     public enum ScoreName
     {
         SN_Time,
         SN_Score,
+        SN_ClearType,//0=張り替える1=脱出2=クリア-1=ゲームオーバー
         SN_MAX
     }
 
@@ -15,7 +18,7 @@ public static class ScoreManager
     // リセット
     public static void Reset()
     {
-        for (int i = 0; i < score.Length; i++)
+        for (int i = 0; i < (int)ScoreName.SN_MAX; i++)
         {
             score[i] = 0;
         }

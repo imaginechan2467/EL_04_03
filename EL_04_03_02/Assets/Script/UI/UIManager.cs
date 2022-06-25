@@ -7,10 +7,11 @@ public class UIManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public Text ScoreText;
+    public Text MoveText;
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -18,5 +19,16 @@ public class UIManager : MonoBehaviour
     {
         ScoreText.text = "解呪数：" + ScoreManager.Get((int)ScoreManager.ScoreName.SN_Score).ToString();
 
+
+        ScoreManager.Reset();
+        if (ScoreManager.Get((int)ScoreManager.ScoreName.SN_ClearType) == 0)
+        {
+            MoveText.text= "目標：\n呪われた藁人形につけられた自分の顔を探せ！！";
+        }
+        if (ScoreManager.Get((int)ScoreManager.ScoreName.SN_ClearType) == 1)
+        {
+            MoveText.text = "目標：\n敵に見つからずに脱出せよ！！";
+
+        }
     }
 }
