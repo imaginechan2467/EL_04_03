@@ -38,7 +38,7 @@ public class SC_EventBus
     }
 
     //í ímé¿çs
-    public void NotifyDeadItemScore()
+    public void NotifyOnTouchWara()
     {
         if (_OnTouchWara != null)
         {

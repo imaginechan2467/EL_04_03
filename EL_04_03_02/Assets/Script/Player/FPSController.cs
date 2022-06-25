@@ -12,6 +12,7 @@ public class FPSController : MonoBehaviour
     float Xsensityvity = 3f, Ysensityvity = 3f;
 
     bool cursorLock = true;
+    bool enableTouch = false;
 
     Rigidbody rb;
 
@@ -82,6 +83,15 @@ public class FPSController : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
         }
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            //ñÿÇ…êGÇÍÇΩÇ∆Ç´
+            if(enableTouch)
+            {
+                SC_EventBus.Instance.NotifyOnTouchWara();
+            }
+        }
     }
 
     //äpìxêßå¿ä÷êîÇÃçÏê¨
@@ -103,5 +113,23 @@ public class FPSController : MonoBehaviour
         return q;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Tree")
+        {
+            enableTouch = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.tag == "Tree")
+        {
+            if(enableTouch)
+            {
+                enableTouch = false;
+            }
+        }
+    }
 
 }
