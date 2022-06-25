@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Kairi.unity
     guid: f3fe66bc314757f4f87ec65d07bdb8c3
+  - enabled: 1
+    path: Assets/Scenes/WataruEndo/Scenes/CautionScene.unity
+    guid: 90aeb8d9ae1138c408820e27713e2a41
+  - enabled: 1
+    path: Assets/Scenes/WataruEndo/Scenes/TitleScene.unity
+    guid: 80a38d69d40c7a74e87f10998247bb78
   m_configObjects: {}
