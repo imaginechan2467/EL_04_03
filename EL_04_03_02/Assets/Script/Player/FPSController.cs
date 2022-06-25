@@ -14,7 +14,6 @@ public class FPSController : MonoBehaviour
 
     bool cursorLock = true;
     bool enableTouch = false;
-    bool enableGoal = false;
 
     Rigidbody rb;
 
@@ -97,7 +96,8 @@ public class FPSController : MonoBehaviour
             if(enableTouch)
             {
                 SC_EventBus.Instance.NotifyOnTouchWara();
-                enableGoal = true;//わらを触ったフラグ
+                ScoreManager.Add(1, (int)ScoreManager.ScoreName.SN_ClearType);//1クリア　2
+
             }
         }
     }
@@ -130,12 +130,9 @@ public class FPSController : MonoBehaviour
         if (other.gameObject.CompareTag("Gate"))
         {
             if (ScoreManager.Get((int)ScoreManager.ScoreName.SN_ClearType) == 1)
-            { 
-                if(enableGoal)
-                {
-                    ScoreManager.Add(2, (int)ScoreManager.ScoreName.SN_ClearType);//1クリア　2
-                    SceneManager.LoadScene("Result");
-                }
+            {
+                ScoreManager.Add(2, (int)ScoreManager.ScoreName.SN_ClearType);//1クリア　2
+                SceneManager.LoadScene("Result");
             }
         }
     }
