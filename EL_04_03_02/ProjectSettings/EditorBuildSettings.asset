@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Result.unity
+    guid: 6e8a73bee70f2324aab6077048f15cae
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 6f9c9e7d4c5bc0c45a456510662116e7
+  - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Kairi.unity
+    guid: f3fe66bc314757f4f87ec65d07bdb8c3
   m_configObjects: {}
