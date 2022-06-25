@@ -6,16 +6,11 @@ using UnityEngine;
 public static class ScoreManager
 {
 
-    public static bool bIsClear = false;
-    public static void SetIsClear(bool b) { bIsClear = b; }
-    public static bool GetIsClear() { return bIsClear; }
-    
-
-
     public enum ScoreName
     {
         SN_Time,
         SN_Score,
+        SN_ClearType,//0=張り替える1=脱出2=クリア-1=ゲームオーバー
         SN_MAX
     }
 

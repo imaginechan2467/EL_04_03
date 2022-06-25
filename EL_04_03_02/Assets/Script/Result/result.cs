@@ -17,11 +17,11 @@ public class result : MonoBehaviour
     void Start()
     {
         ScoreManager.Reset();
-        if(ScoreManager.GetIsClear() == true)
+        if (ScoreManager.Get((int)ScoreManager.ScoreName.SN_ClearType) == 2)
         {
             isClear.text = "GameClear";
         }
-        if(ScoreManager.GetIsClear() == false)
+        if(ScoreManager.Get((int)ScoreManager.ScoreName.SN_ClearType) == -1)
         {
             isClear.text = "GameOver";
         }
